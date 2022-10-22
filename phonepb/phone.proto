@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package phonepb;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "Api_With_AbdulHamid/phonepb";
+
+service PhoneService{
+  rpc AddNewPhone(AddNewPhoneRequest) returns (Phone);
+  rpc GetPhone(GetPhoneRequest) returns (Phone);
+  rpc DeletePhone(DeletePhoneRequest) returns (google.protobuf.Empty);
+}
+
+message Phone{
+  string id = 1;
+  string name = 2;
+}
+
+message AddNewPhoneRequest{
+
+}
+
+message GetPhoneRequest{
+  string name = 1;
+}
+
+message DeletePhoneRequest{
+  string name = 1;
+}
