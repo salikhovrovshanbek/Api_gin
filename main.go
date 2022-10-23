@@ -5,6 +5,7 @@ import (
 	"Api_With_AbdulHamid/domain/Phone"
 	"Api_With_AbdulHamid/pkg/id"
 	"Api_With_AbdulHamid/repository"
+	"Api_With_AbdulHamid/server"
 	"Api_With_AbdulHamid/service"
 	"fmt"
 	"log"
@@ -26,9 +27,8 @@ func main() {
 	PhoneFactory := Phone.NewFactory(id.Generator{})
 
 	svc := service.New(repo, PhoneFactory)
-	svr :=
-
-		fmt.Println(repo)
+	svr := server.New(svc, PhoneFactory)
+	fmt.Println(svr)
 
 	aaa()
 
