@@ -30,16 +30,4 @@ func main() {
 	svr := server.New(svc, PhoneFactory)
 	fmt.Println(svr)
 
-	aaa()
-
-}
-
-func aaa() {
-	m := make(map[string][]int)
-	slc := make([]int, 0)
-	for i := 0; i < 5; i++ {
-		slc = append(slc, i)
-	}
-	m["A"] = slc
-	fmt.Println(m["A"])
 }
